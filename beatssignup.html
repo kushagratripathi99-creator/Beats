@@ -13,6 +13,80 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
+<script>
+function val(){
+    
+    var name = document.fm.nme.value;
+    var dob = document.fm.dobb.value;
+    var gender = document.fm.gdr.value;
+    var mobile = document.fm.mb.value;
+    var region = document.fm.rgn.value;
+    var email = document.fm.el.value;
+    var password = document.fm.pass.value;
+
+    if(name == ""){
+        alert("Full Name is required");
+        return false;
+    }
+
+    if(dob == ""){
+        alert("Date of Birth is required");
+        return false;
+    }
+
+    if(gender == ""){
+        alert("Please select Gender");
+        return false;
+    }
+
+    if(mobile == ""){
+        alert("Mobile number is required");
+        return false;
+    }
+
+    if(mobile.length != 10){
+        alert("Mobile number must be 10 digits");
+        return false;
+    }
+
+    if(isNaN(mobile)){
+        alert("Mobile number must be numeric");
+        return false;
+    }
+
+    if(region == ""){
+        alert("Please select Region");
+        return false;
+    }
+
+    if(email == ""){
+        alert("Email is required");
+        return false;
+    }
+
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!email.match(emailPattern)){
+        alert("Enter valid email address");
+        return false;
+    }
+
+    if(password == ""){
+        alert("Password is required");
+        return false;
+    }
+
+    if(password.length < 6){
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+
+    alert("Signup Successful!");
+    return true;
+}
+</script>
+
   </head>
   <body>
     <video autoplay muted loop id="bg-video">
