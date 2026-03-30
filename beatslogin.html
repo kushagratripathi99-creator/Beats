@@ -13,28 +13,66 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
+<script>
+function val() {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+
+  if (email == "") {
+    alert("Email or Username is required!");
+    return false;
+  }
+
+  if (password == "") {
+    alert("Password is required!");
+    return false;
+  }
+
+  if (password.length < 6) {
+    alert("Password must be at least 6 characters long!");
+    return false;
+  }
+
+  alert("Login Successful!");
+  return true;
+}
+</script>
+
   </head>
+
   <body>
     <video autoplay muted loop id="bg-video">
         <source src="redbg.mp4" type="video/mp4">
     </video>
+
     <div class="login-container">
       <div class="logo">
         <i class="fa-brands fa-tidal" style="color: rgb(255, 255, 255)"></i>
         <h1>Beats</h1>
       </div>
+
       <h2>Log in to Vibing</h2>
+
       <form class="f1" onsubmit="return val()" method="POST" action="login.php">
+        
         <label>Email or username</label>
-        <input type="text" placeholder="Email or username" />
+        <input type="text" id="email" placeholder="Email or username" />
+
         <label>Password</label>
-        <input type="password" placeholder="Password" />
-        <button class="login-btn" name="lgg"><a href="index.html">Log In</a></button>
+        <input type="password" id="password" placeholder="Password" />
+
+        <button class="login-btn" name="lgg">
+          <a href="index.html">Log In</a>
+        </button>
+
       </form>
+
       <p class="signup">
         Don't have an account?
         <a href="beatssignup.html">Sign up for Beats</a>
       </p>
     </div>
+
   </body>
 </html>
